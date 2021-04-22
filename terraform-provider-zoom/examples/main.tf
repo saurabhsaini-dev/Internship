@@ -7,7 +7,9 @@ terraform {
   }
 }
 
-provider "zoom" {}
+provider "zoom" {
+  token = var.jwt_token
+}
 
 resource "zoom_user" "ex" { 
   email = "thsaurabhsaini@gmail.com"
