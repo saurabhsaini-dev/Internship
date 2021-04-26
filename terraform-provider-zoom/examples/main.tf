@@ -1,20 +1,18 @@
 terraform {
   required_providers {
-    hashicups = {
-      version = "0.2"
-      source  = "hashicorp.com/edu/hashicups"
+    zoom = {
+      version = "0.1.0"
+      source  = "hashicorp.com/edu/zoom"
     }
   }
 }
 
-provider "hashicups" {}
-
-module "psl" {
-  source = "./coffee"
-
-  coffee_name = "Packer Spiced Latte"
+provider "zoom" {
+  token = var.jwt_token
 }
 
-output "psl" {
-  value = module.psl.coffee
+resource "zoom_user" "ex" { 
+  email = "thsaurabhsaini@gmail.com"
+  firstname = "Saurabh"
+  lastname = "Saini"
 }
