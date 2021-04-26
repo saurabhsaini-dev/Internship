@@ -106,6 +106,54 @@ func resourceUserCreate(ctx context.Context, d *schema.ResourceData, m interface
 	fn := d.Get("firstname").(string)
 	ln := d.Get("lastname").(string)
 
+	if fn == "" && ln == "" {
+		clienturl := "https://api.zoom.us/v2/users/"
+		userID := email
+		url := fmt.Sprintf("%s%s", clienturl, userID)
+
+		var err error
+
+		httpMethod := http.MethodGet
+		httpClient := &http.Client{}
+
+		var req *http.Request
+		req, err = http.NewRequest(httpMethod, url, nil)
+		if err != nil {
+			return diag.FromErr(err)
+		}
+
+		req.Header.Add("Authorization", "Bearer "+authToken)
+		req.Header.Add("Content-Type", "application/json")
+
+		var resp *http.Response
+		resp, err = httpClient.Do(req)
+		if err != nil {
+			return diag.FromErr(err)
+		}
+
+		if resp.StatusCode == 404 {
+			er := errors.New("User Doesn't Exist")
+			err = er
+			return diag.FromErr(err)
+		}
+
+		var response GetUserResponse
+		response, _ = handleReadRequest(userID)
+
+		eml := response.Email
+		frstnme := response.FirstName
+		id := response.Id
+		lstnme := response.LastName
+
+		d.SetId(id)
+
+		d.Set("email", &eml)
+		d.Set("firstname", &frstnme)
+		d.Set("lastname", &lstnme)
+
+		return diags
+	}
+	
 	createUserRequest := CreateUserRequest{
 		Action: "create",
 		UserInfo: Userinfo{
