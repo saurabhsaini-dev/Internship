@@ -1,15 +1,14 @@
-Discovery:
-1. Does the application provide APIs for user management:
+1. Does the application provides APIs for user management:
    Yes, Bamboo provides APIs for user management.
-
+   
    https://docs.atlassian.com/atlassian-bamboo/REST/7.2.4/#d2e657
-
+   
 2. Are APIs for user management available in our plan.
-   There are two plans. I think both the plans support user management because pricing
-   is based on number of users.
-    
+   There are two plans. I think both the plans support user management bacause 
+   pricing is based on number of agents.
+   
    https://www.atlassian.com/software/bamboo/pricing
-
+   
 3. How does the API do authentication
    It provides two method:
    - Log into Bamboo manually
