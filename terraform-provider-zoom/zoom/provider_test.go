@@ -23,6 +23,10 @@ func TestProvider(t *testing.T) {
 	}
 }
 
+func TestProvider_impl(t *testing.T) {
+	var _ *schema.Provider = Provider()
+}
+
 func testAccPreCheck(t *testing.T) {
 	if v := os.Getenv("ZOOM_TOKEN"); v == "" {
 		t.Fatal("ZOOM_TOKEN must be set for acceptance tests")
