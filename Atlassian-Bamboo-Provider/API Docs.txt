@@ -18,11 +18,3 @@ Discovery:
    https://developer.atlassian.com/server/bamboo/using-the-bamboo-rest-apis/
    https://confluence.atlassian.com/bamboo/personal-access-tokens-976779873.html
    
-   
-
-
-
-
-
-
- 
