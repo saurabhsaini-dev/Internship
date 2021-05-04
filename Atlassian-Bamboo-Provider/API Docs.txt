@@ -5,7 +5,7 @@ Discovery:
    https://docs.atlassian.com/atlassian-bamboo/REST/7.2.4/#d2e657
 
 2. Are APIs for user management available in our plan.
-   There are two plans. I think both the plans support user management because pricing
+   There are two plans. Both the plans support user management because pricing
    is based on number of users.
     
    https://www.atlassian.com/software/bamboo/pricing
@@ -18,3 +18,12 @@ Discovery:
    https://developer.atlassian.com/server/bamboo/using-the-bamboo-rest-apis/
    https://confluence.atlassian.com/bamboo/personal-access-tokens-976779873.html
    
+Make the API work:
+1. Using Postman, create a user 
+   Created user 
+
+2. Using Postman, update a user
+   Updated user
+
+3. Using Postman, delete a user
+   Deleted user
