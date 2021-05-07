@@ -1,0 +1,11 @@
+Discovery:
+1. Does the application provide APIs for user management:
+   No, Meltwater doesn't provide APIs for user management.
+   
+   https://developer.meltwater.com/docs/meltwater-api/reference/endpoints/
+
+2. Are APIs for user management available in our plan.
+   It doesn't provide APIs for user management.
+    
+3. How does the API do authentication
+   It doesn't provide APIs for user management.
